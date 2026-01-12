@@ -1,5 +1,5 @@
-import { Card, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Sparkles, Scissors, Paintbrush, Eye, Droplet } from "lucide-react";
 
 const courses = [
@@ -69,10 +69,10 @@ const CoursesSection = () => {
                         return (
                             <Card
                                 key={index}
-                                className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-gold group animate-fade-in-up"
+                                className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-gold group animate-fade-in-up h-full"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
-                                <CardContent className="p-6">
+                                <CardContent className="p-6 flex flex-col h-full">
                                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                                         <Icon className="w-7 h-7 text-primary" />
                                     </div>
@@ -90,7 +90,7 @@ const CoursesSection = () => {
                                         <span>Duração: {course.duration}</span>
                                     </div>
 
-                                    <div className="space-y-2 mb-6">
+                                    <div className="space-y-2 mb-6 flex-grow">
                                         {course.highlights.map((highlight, idx) => (
                                             <div key={idx} className="flex items-center gap-2 text-sm text-foreground/60">
                                                 <div className="w-1 h-1 bg-foreground/40 rounded-full" />
@@ -101,7 +101,7 @@ const CoursesSection = () => {
 
                                     <Button
                                         variant="outline"
-                                        className="w-full border-primary/30 text-primary hover:bg-primary/10"
+                                        className="w-full border-primary/30 text-primary hover:bg-primary hover:text-background hover:border-primary transition-all duration-300 mt-auto"
                                     >
                                         Saiba Mais
                                     </Button>
